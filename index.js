@@ -23,7 +23,7 @@ MongoClient.connect(mongoURI)
 
       urlsCollection.insertOne({ shortCode, longUrl })
         .then(() => {
-          res.json({ shortUrl: `http://kamron.dev:3000/${shortCode}` });
+          res.json({ shortUrl: `http://localhost:3000/${shortCode}` });
         })
         .catch(error => {
           console.error(error);
