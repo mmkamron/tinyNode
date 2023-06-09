@@ -10,7 +10,6 @@ const mongoURI = process.env.MONGO_URI;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
 MongoClient.connect(mongoURI)
   .then(client => {
     console.log('Connected to MongoDB');
@@ -24,7 +23,7 @@ MongoClient.connect(mongoURI)
 
       urlsCollection.insertOne({ shortCode, longUrl })
         .then(() => {
-          res.json({ shortUrl: `https://tinynode.jprq.live/${shortCode}` });
+          res.json({ shortUrl: `http://kamron.dev:3000/${shortCode}` });
         })
         .catch(error => {
           console.error(error);
@@ -32,7 +31,6 @@ MongoClient.connect(mongoURI)
         });
     });
 
-    // Route for redirecting to the original URL
     app.get('/:shortCode', (req, res) => {
       const shortCode = req.params.shortCode;
 
@@ -50,7 +48,6 @@ MongoClient.connect(mongoURI)
         });
     });
 
-    // Start the server
     app.listen(port, () => {
       console.log(`Server started on port ${port}`);
     });
