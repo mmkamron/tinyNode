@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TinyNode</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid">
+        <div class="container grid-item">
+            <input type="text" id="urlInput" placeholder="Enter long url">
+            <button id="sendButton" onclick="shorten()">Shorten</button>
+        </div>
+        <div class="grid-item">
+            <p id="shortUrl" style="display: inline-block;"></p>
+            <button id="copyBtn" style="display: none;" onclick="copy()">Copy url</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
