@@ -1,3 +1,1 @@
-# TinyNode
-
-TinyNode is a lightweight Node.js backend project to shorten longs urls developed for educational purposes.
+![tinynode](https://socialify.thatcomputerscientist.com/mmkamron/tinynode/image?_gl=1*1c1u18t*_ga*MTIzMjUzMDIzNy4xNjg3ODQyNzgw*_ga_72XTC500FR*MTY4Nzg2MjI1Ni4yLjEuMTY4Nzg2MjQ4My4wLjAuMA..&description=1&font=Source%20Code%20Pro&forks=1&issues=1&language=1&language_1=1&language_2=0&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark)
