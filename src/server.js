@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const { MongoClient } = require('mongodb');
 const shortid = require('shortid');
+const path = require('path');
 require('dotenv').config();
 
 const port = process.env.PORT || 3000;
@@ -9,6 +10,7 @@ const mongoURI = process.env.MONGO_URI;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('src/public'));
 
 MongoClient.connect(mongoURI)
   .then(client => {
@@ -16,7 +18,6 @@ MongoClient.connect(mongoURI)
     const db = client.db('urlshortener');
     const urlsCollection = db.collection('urls');
 
-    // Route for shortening the URL
     app.post('/shorten', (req, res) => {
       const longUrl = req.body.longUrl;
       const shortCode = shortid.generate();
