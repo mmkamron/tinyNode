@@ -3,7 +3,8 @@ const urlInput = document.getElementById("urlInput");
 const copyBtn = document.getElementById("copyBtn");
 const shorten = () => {
     const url = urlInput.value.trim();
-    if (url === "") {
+    const httpPattern = /^https?:\/\/\w+(\.\w+)+([\/?].*)?$/
+    if (!httpPattern.test(url)) {
         alert("Please enter a valid URL.");
         return;
     }
